@@ -1,0 +1,428 @@
+<title>おとなでも間違う日本の伝統・歴史</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="日本の「伝統」をめぐる思い込みを、系統・年代・分野から調べられるデータベース。出典・確度・別の見方つき。">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap">
+<script type="application/ld+json">%%LD%%</script>
+<style>
+/* Layout: 1画面目で「押せば始まる」。メニュー→説明バー→結果。色は年代だけに使い、状態は形と文字で示す。 */
+:root{
+  --bg:#0c1124; --ink:#f4f6ff; --ink2:#b4bde0; --line:#33407a; --panel:#171f3d;
+  --hot:#ffd400; --hot-ink:#1a1500; --focus:#ffffff; --glow:rgba(255,212,0,.55);
+  --e1:#e4002b; --e2:#f27a00; --e3:#f2c400; --e4:#18a058; --e5:#0a84d6; --e6:#8a4cf0; --e3-ink:#1a1500; --e7:#0b8f8c; --e8:#8a5a24; --e9:#c2185b; --e10:#5d6b8a;
+  --disp:"Dela Gothic One","Hiragino Sans","Yu Gothic",sans-serif;
+  --body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",system-ui,sans-serif;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){
+  --bg:#e9edf8; --ink:#10172f; --ink2:#47507a; --line:#9aa6d4; --panel:#ffffff;
+  --hot:#d6001c; --hot-ink:#ffffff; --focus:#10172f; --glow:rgba(214,0,28,.35); color-scheme:light;}}
+:root[data-theme="light"]{
+  --bg:#e9edf8; --ink:#10172f; --ink2:#47507a; --line:#9aa6d4; --panel:#ffffff;
+  --hot:#d6001c; --hot-ink:#ffffff; --focus:#10172f; --glow:rgba(214,0,28,.35); color-scheme:light;}
+/* せってい: 文字サイズ・コントラスト・動き */
+html[data-fs="s"]{font-size:15px}html[data-fs="l"]{font-size:19px}
+html[data-hc="1"]{--line:var(--ink);--ink2:var(--ink)}
+html[data-rm="1"] *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1rem;line-height:1.75;
+  padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px));padding-block:0 48px;
+  background-image:repeating-conic-gradient(from 0deg at 50% -10%,rgba(255,255,255,.03) 0 6deg,transparent 6deg 12deg);background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.wrap{max-width:1040px;margin:0 auto}
+a{color:inherit}
+:focus-visible{outline:4px solid var(--focus);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--hot);color:var(--hot-ink);padding:8px 16px;font-weight:900;z-index:20}
+.skip:focus{left:0}
+header.top{padding:20px 0 4px;display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 24px;justify-content:space-between}
+h1{font-family:var(--disp);font-weight:400;font-size:clamp(1.8rem,6vw,3rem);line-height:1.15;margin:0;letter-spacing:.02em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--hot);display:inline-block;transform:skewX(-8deg)}
+.lead{margin:6px 0 0;max-width:44em}
+.lead b{background:linear-gradient(transparent 62%,var(--glow) 62%)}
+.set{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.82rem}
+.set button{font:inherit;cursor:pointer;background:var(--panel);color:var(--ink);border:2px solid var(--line);padding:2px 10px;min-height:32px}
+.set button[aria-pressed="true"]{border-color:var(--hot);background:var(--hot);color:var(--hot-ink);font-weight:900}
+.set .lab{color:var(--ink2)}
+.sec{font-family:var(--disp);font-size:.95rem;margin:16px 0 8px;display:inline-block;background:var(--ink);color:var(--bg);padding:1px 16px 1px 10px;transform:skewX(-10deg)}
+.sec span{display:inline-block;transform:skewX(10deg)}
+.grid{display:grid;gap:10px}
+.g-main{grid-template-columns:3fr 2fr}
+.g-era{grid-template-columns:repeat(auto-fit,minmax(90px,1fr))}
+.g-type{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.g-field{grid-template-columns:repeat(5,1fr)}
+.tile{appearance:none;border:3px solid rgba(255,255,255,.85);color:#fff;font:inherit;cursor:pointer;text-align:left;
+  display:flex;flex-direction:column;justify-content:space-between;gap:2px;min-height:92px;padding:8px 14px;position:relative;
+  transform:skewX(-7deg);transition:transform .1s ease,box-shadow .1s ease,border-color .1s ease;box-shadow:0 4px 0 rgba(0,0,0,.35)}
+.tile>*{transform:skewX(7deg)}
+.tile:hover,.tile:focus-visible{transform:skewX(-7deg) translateY(-3px) scale(1.03);border-color:var(--hot);box-shadow:0 8px 0 rgba(0,0,0,.35),0 0 24px var(--glow);z-index:2}
+.tile:active{transform:skewX(-7deg) translateY(1px)}
+.tile.sel{border-color:var(--hot);box-shadow:0 0 0 4px var(--hot),0 0 26px var(--glow)}
+.tile.sel::after{content:"えらんでいる";position:absolute;right:8px;top:-12px;background:var(--hot);color:var(--hot-ink);font-size:.7rem;font-weight:900;padding:0 8px;transform:skewX(7deg)}
+.tt{font-family:var(--disp);font-size:clamp(1rem,2.4vw,1.35rem);line-height:1.25}
+.ts{font-size:.75rem;opacity:.95}
+.tn{font-family:var(--disp);font-size:1.6rem;line-height:1;align-self:flex-end}
+.tn small{font-family:var(--body);font-size:.75rem;margin-left:2px}
+/* 大事なものをより大きく: 「ぜんぶ」と「古来の主張」だけを大きくする */
+.tile.all{background:linear-gradient(135deg,#1c3fd8,#0a84d6);min-height:124px}
+.tile.claim{background:linear-gradient(135deg,#b3001f,#e4002b);min-height:124px}
+.tile.all .tt,.tile.claim .tt{font-size:clamp(1.25rem,3.6vw,1.9rem)}
+.tile.e1{background:var(--e1)}.tile.e2{background:var(--e2)}.tile.e3{background:var(--e3);color:var(--e3-ink);border-color:rgba(0,0,0,.55)}
+.tile.e4{background:var(--e4)}.tile.e5{background:var(--e5)}.tile.e6{background:var(--e6)}
+.g-era .tile{padding:8px 10px}.g-era .tt{font-size:1rem}
+.tile.e10{background:var(--e10)}.card.e10{border-left-color:var(--e10)}
+.tile.e7{background:var(--e7)}.tile.e8{background:var(--e8)}.tile.e9{background:var(--e9)}
+.tile.ty{background:#2f3a86;min-height:78px}.tile.ty .tt{font-size:1.1rem}
+.card.e7{border-left-color:var(--e7)}.card.e8{border-left-color:var(--e8)}.card.e9{border-left-color:var(--e9)}
+.tile.f{background:#2a3470;min-height:66px;padding:6px 12px}
+.tile.f .tt{font-size:1rem}.tile.f .tn{font-size:1.2rem}
+.helpbar{margin:12px 0 0;min-height:3.6em;padding:8px 14px;background:var(--panel);border:2px solid var(--line);border-left:8px solid var(--hot)}
+.helpbar b{font-family:var(--disp);font-weight:400;margin-right:.6em}
+.hint{color:var(--ink2);font-size:.82rem;margin:8px 0 0}
+kbd{font-family:inherit;border:1px solid var(--ink2);border-bottom-width:3px;border-radius:4px;padding:0 6px;font-size:.78rem}
+#results{scroll-margin-top:60px;margin-top:22px}
+/* HUD: いまの条件と件数は、スクロールしても追いかけてくる */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin:0 0 10px;padding:8px 12px;background:var(--panel);border:2px solid var(--line)}
+.bar h2{font-family:var(--disp);font-weight:400;font-size:1.05rem;margin:0;flex:1 1 180px;min-width:0}
+.bar .count{font-family:var(--disp);color:var(--hot);font-size:1.3rem}
+.bar input{font:inherit;min-width:0;flex:1 1 160px;padding:5px 10px;background:var(--bg);color:var(--ink);border:2px solid var(--line)}
+.btn{font:inherit;font-weight:900;cursor:pointer;background:var(--hot);color:var(--hot-ink);border:0;padding:5px 14px;transform:skewX(-8deg)}
+.btn.sub{background:var(--panel);color:var(--ink);border:2px solid var(--line)}
+.btn>span{display:inline-block;transform:skewX(8deg)}
+.legend{font-size:.82rem;color:var(--ink2);margin:0 0 10px}
+.card{background:var(--panel);border:2px solid var(--line);border-left-width:10px;margin:0 0 8px;scroll-margin-top:70px}
+.card.e1{border-left-color:var(--e1)}.card.e2{border-left-color:var(--e2)}.card.e3{border-left-color:var(--e3)}
+.card.e4{border-left-color:var(--e4)}.card.e5{border-left-color:var(--e5)}.card.e6{border-left-color:var(--e6)}
+.card[open]{border-top-color:var(--hot);border-right-color:var(--hot);border-bottom-color:var(--hot)}
+.card[hidden]{display:none}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding:10px 14px;align-items:start}
+summary::-webkit-details-marker{display:none}
+summary:hover{background:rgba(127,140,200,.14)}
+.cid{font-family:var(--disp);font-size:.9rem;color:var(--ink2);padding-top:2px}
+.cmain{display:flex;flex-direction:column;min-width:0}
+.cname{font-family:var(--disp);font-size:1.1rem;line-height:1.4;text-wrap:balance}
+.cplain{opacity:.95}
+.cbadges{grid-column:2;display:flex;flex-wrap:wrap;gap:6px}
+/* 色は年代だけ。状態は線の形と文字で示し、色に頼らない */
+.b{font-size:.76rem;font-weight:700;padding:0 9px;border:2px solid var(--ink2);color:var(--ink);white-space:nowrap}
+.b.era,.b.typ{border-color:var(--line);color:var(--ink2)}
+.b.ok{border-style:solid}.b.warn{border-style:dashed}.b.ng{border-style:dotted}
+.b.cC{background:var(--hot);color:var(--hot-ink);border-color:var(--hot)}
+.cbody{padding:4px 16px 14px;border-top:2px dashed var(--line)}
+dl{margin:8px 0 0;display:grid;grid-template-columns:minmax(7em,11em) 1fr;gap:6px 16px}
+dt{font-weight:900;color:var(--ink2);font-size:.86rem}
+dd{margin:0;min-width:0;overflow-wrap:anywhere}
+h4{margin:12px 0 4px;font-size:.88rem;color:var(--ink2)}
+.srcs{margin:0;padding-left:1.2em;font-size:.86rem}
+.srcs li{margin:3px 0;overflow-wrap:anywhere}
+.sid{font-family:var(--disp);font-size:.72rem;color:var(--ink2)}
+.stype{font-size:.7rem;border:1px solid var(--line);padding:0 6px;margin-right:2px}
+.perma{margin:8px 0 0;font-size:.82rem}
+.empty{padding:24px;text-align:center;color:var(--ink2);border:2px dashed var(--line)}
+.info{margin:30px 0 0;display:grid;gap:10px}
+.info details{background:var(--panel);border:2px solid var(--line)}
+.info summary{display:block;font-family:var(--disp);font-size:1rem;padding:10px 14px}
+.info .inner{padding:0 16px 14px}
+.info table{border-collapse:collapse;width:100%;font-size:.88rem}
+.info th,.info td{border:1px solid var(--line);padding:5px 10px;text-align:left;vertical-align:top}
+.scroll{overflow-x:auto}
+.info code{background:var(--bg);padding:1px 6px;overflow-wrap:anywhere}
+
+/* 用語: 点線の下線のみ。見た目は崩さない */
+.gl{border-bottom:2px dotted var(--ink2);cursor:help;border-radius:2px}
+.gl:hover,.gl[aria-expanded="true"]{background:rgba(127,140,200,.22)}
+.gl ruby{ruby-position:over}
+.gl rt{display:none;font-size:.55em;line-height:1;color:var(--ink2);font-weight:400;letter-spacing:0}
+html[data-ruby="1"] .gl rt{display:ruby-text}
+html[data-ruby="1"] .cplain,html[data-ruby="1"] .cbody,html[data-ruby="1"] .inner{line-height:2.05}
+#glTip{position:fixed;z-index:30;pointer-events:none;background:var(--ink);color:var(--bg);padding:2px 10px;font-size:.9rem;font-weight:700;border-radius:4px;max-width:20em}
+#glPop{position:fixed;z-index:31;left:0;right:0;bottom:0;display:flex;justify-content:center;padding:0 max(16px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));pointer-events:none}
+#glPop[hidden]{display:none}
+#glPop .box{pointer-events:auto;width:min(40em,100%);background:var(--panel);color:var(--ink);border:2px solid var(--hot);border-left-width:10px;padding:10px 14px;box-shadow:0 6px 24px rgba(0,0,0,.45)}
+#glPop .rd{font-size:.85rem;color:var(--ink2)}
+#glPop .tm{font-family:var(--disp);font-size:1.25rem;line-height:1.3;margin:0}
+#glPop p{margin:4px 0 8px}
+#glPop button,#glPop a{font:inherit;font-size:.85rem;cursor:pointer;background:var(--panel);color:var(--ink);border:2px solid var(--line);padding:2px 10px;min-height:32px;margin-right:6px}
+.gdl dt{font-weight:900;color:var(--ink)}.gdl dt small{font-weight:400;color:var(--ink2);margin-left:6px}
+.gdl dd{margin:0 0 8px 0}
+footer{margin-top:28px;color:var(--ink2);font-size:.82rem}
+@media (max-width:760px){
+  .g-main{grid-template-columns:1fr}.g-era{grid-template-columns:repeat(2,1fr)}.g-field{grid-template-columns:repeat(2,1fr)}
+  .tile{transform:skewX(-4deg)}.tile>*{transform:skewX(4deg)}
+  .tile:hover,.tile:focus-visible{transform:skewX(-4deg) translateY(-2px)}.tile:active{transform:skewX(-4deg)}
+  .tile.sel::after{transform:skewX(4deg)}
+  dl{grid-template-columns:1fr;gap:2px}dt{margin-top:8px}
+  .hint.kb{display:none}
+}
+@media (min-width:761px) and (max-width:900px){.g-era{grid-template-columns:repeat(3,1fr)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.tile:hover,.tile:focus-visible{transform:skewX(-7deg)}}
+</style>
+
+<div class="wrap">
+<a class="skip" href="#results">メニューをとばして一覧へ</a>
+<header class="top">
+  <div>
+    <h1>おとなでも間違う<br><em>日本の伝統・歴史</em></h1>
+    <p class="lead">「大昔からある」と思っていたら新しかった。「外から来た」と思っていたら古かった。「全国同じ」と思っていたら地域で違った。そんな<b>伝統の思い込み</b>を、出典つきで調べられます。まずは下の「ぜんぶ見る」を押してください。</p>
+  </div>
+  <div class="set" role="group" aria-label="せってい">
+    <span class="lab">文字</span>
+    <button type="button" data-fs="s" aria-pressed="false">小</button><button type="button" data-fs="m" aria-pressed="true">中</button><button type="button" data-fs="l" aria-pressed="false">大</button>
+    <button type="button" id="hc" aria-pressed="false">くっきり</button>
+    <button type="button" id="rm" aria-pressed="false">動きをへらす</button>
+    <button type="button" id="ry" aria-pressed="false" title="むずかしい語の上に、よみがなを小さく出します">よみがなを上に出す</button>
+  </div>
+</header>
+
+<h2 class="sec"><span>まずはここから</span></h2>
+<div class="grid g-main">
+  <button class="tile all sel" data-set="all" data-help="全%%N%%項目を、年代の古い順に見ます。迷ったらここ。"><span class="tt">ぜんぶ見る</span><span class="ts">年代の古い順</span><span class="tn">%%N%%<small>件</small></span></button>
+  <button class="tile claim" data-set="claim" data-help="「大昔からある」と言っている文章が、出典で見つかったものだけを見ます。"><span class="tt">「古来」と言っているもの</span><span class="ts">主張が出典で見つかったもの</span><span class="tn">%%NCLAIM%%<small>件</small></span></button>
+</div>
+
+<h2 class="sec"><span>どんな話?でえらぶ</span></h2>
+<div class="grid g-type">%%TYPE_TILES%%</div>
+
+<h2 class="sec"><span>年代でえらぶ</span></h2>
+<div class="grid g-era">%%ERA_TILES%%</div>
+
+<h2 class="sec"><span>分野でえらぶ</span></h2>
+<div class="grid g-field">%%FIELD_TILES%%</div>
+
+<div class="helpbar" id="help" aria-live="polite"><b>せつめい</b><span id="helpText">タイルにふれると、ここに説明が出ます。</span></div>
+<p class="hint kb"><kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd> タイルを移動 / <kbd>Enter</kbd> 決定 / <kbd>/</kbd> ことばで探す / <kbd>Esc</kbd> ぜんぶ見るにもどる</p>
+
+<section id="results" aria-label="検索結果">
+  <div class="bar">
+    <h2 id="curLabel">ぜんぶ</h2>
+    <span><span class="count" id="curCount">%%N%%</span> 件</span>
+    <input id="q" type="search" placeholder="ことばで探す(例: 神社、1946)" aria-label="ことばで探す">
+    <button class="btn sub" id="toggleAll" type="button"><span>ぜんぶひらく</span></button>
+    <button class="btn" id="reset" type="button"><span>リセット</span></button>
+  </div>
+  <p class="legend">項目の見方:<b>古来の主張</b>=「古くからある」と言っている文章があるか。<b>確度</b>=根拠のたしかさ(実線=確認済、破線=要確認、点線=確認不可)。くわしくは下の「読み方」。 <b>点線の下線の語</b>は、タップ(パソコンはポインタを合わせる)で読みがなが出て、タップ・クリックで説明が出ます。</p>
+  <div id="list">
+%%CARDS%%
+  </div>
+  <div class="empty" id="empty" hidden>条件に合う項目がありません。「リセット」で最初にもどれます。</div>
+</section>
+
+<div class="info">
+  <details id="glossary"><summary>用語集(よみがな・やさしい説明)</summary><div class="inner">
+    <p>⚠️要確認:読みと説明は一般的な語義にもとづく簡単なものです(辞典との照合は未実施)。各項目の根拠ではありません。</p>
+    <dl class="gdl">%%GLLIST%%</dl>
+  </div></details>
+  <details id="about"><summary>このデータベースが集めるもの</summary><div class="inner">
+    <p>伝統は、必ず誰かが作って始まります。だから「新しい」こと自体は問題ではありません。問題は、<strong>来歴(いつ、だれが始めたか)をまちがえたまま</strong>語られることです。専門家でなくても、おとなでも、思い込みやすい話を集めます。</p>
+    <ul>
+      <li><strong>近代の創作</strong>:50年・100年の歴史しかないのに、大昔からあるように語られる。</li>
+      <li><strong>外来・移民の歴史</strong>:「最近の異物」と見られがちだが、長い歴史がある。または「昔から閉じていた」と思われているが、実際は違った。</li>
+      <li><strong>宗教史の流れ</strong>:神仏習合のように、長く続いたのに、いまはあまり語られない流れ。</li>
+      <li><strong>制度の経緯</strong>:税や法律が、いまの形になるまでの道のり。</li>
+      <li><strong>地域でちがう</strong>:ご飯と汁の位置、ひな人形の左右、拍手の回数など、「全国どこでも同じ」と思われがちだが、実は地域で違う作法や信仰。分かれた時期と理由がわかるものは、年代つきで記録する。</li>
+      <li><strong>戦争の記録</strong>:公文書・裁判・研究で記録のある出来事が、否定されたり小さく語られたりすることがある。</li>
+    </ul>
+    <p>どの項目にも「いつ作られたか」と「そういう主張があるか」を<strong>別々に</strong>記録し、出典・確度・別の見方をつけています。調査日は 2026-10-24 です。</p>
+    <p>どの立場の人にも思い込みは起こります。ここでは、人や立場ではなく、<strong>「主張のかたち」と史料の照らし合わせ</strong>を記録します。</p>
+  </div></details>
+  <details id="howto"><summary>読み方:3つの目印</summary><div class="inner">
+    <p><strong>古来の主張</strong>:その項目を「古くからある」と説明した記述が、出典で確認できたか。「出典で確認」「間接・部分的」「未確認」の3段階です。「未確認」は、古来だとは言っていない、という意味ではなく、今回は見つからなかった、という意味です。</p>
+    <div class="scroll"><table>
+      <tr><th>確度</th><th>意味</th><th>件数</th></tr>
+      <tr><td>確認済</td><td>複数の独立した出典で一致を確認</td><td>%%OK%%</td></tr>
+      <tr><td>要確認</td><td>出典が1つの系統、本文を読めていない、または専門家の見解が分かれる</td><td>%%WARN%%</td></tr>
+      <tr><td>確認不可</td><td>検索では裏付けが得られなかった</td><td>%%NG%%</td></tr>
+    </table></div>
+    <p>「複数の記事がある」ことと「独立した確認」は別です。同じ研究者の話をたどっているだけなら、1つの出典として数えています。</p>
+  </div></details>
+  <details id="changelog"><summary>訂正・更新履歴と、指摘の受け方</summary><div class="inner">
+    <p>項目を直したり足したりしたときは、ここに記録します。各項目の「最終確認日」は、その項目の出典を最後に確認した日です。</p>
+    <ul>%%CHANGELOG%%</ul>
+    <p>誤りや出典の指摘:%%CONTACT%%</p>
+  </div></details>
+  <details id="for-ai"><summary>AI・研究者の方へ</summary><div class="inner">
+    <p>全項目は、このページのHTMLにそのまま書かれています(スクリプトなしで読めます)。同じ内容を、下記のJSONでも持っています。</p>
+    <ul>
+      <li>ページ内の <code>&lt;script type="application/json" id="db-json"&gt;</code> に全項目</li>
+      <li>機械向けの入口: <code>data.json</code>(全項目と用語集)、<code>llms.txt</code>(案内。正式な標準ではなく提案段階のもの)、<code>sitemap.xml</code></li>
+      <li>項目ごとのリンクは <code>#M01</code> のような形(ID は 明治=M、大正=T、昭和初期=S、昭和戦中=W、昭和戦後=P、平成以降=H)</li>
+      <li>引用するときは、項目ID・確度・調査日(2026-10-24)を添えてください。確度が「要確認」「確認不可」の項目は、断定の根拠にしないでください。</li>
+    </ul>
+    <p>項目の分類は、「古来」の主張と成立時期を分けて記録するための、このデータベース独自の整理です。学説の定説ではありません。</p>
+  </div></details>
+  <details id="limits"><summary>調べきれていないこと</summary><div class="inner">
+    <ul>
+      <li>「ある立場の人たちが触れない」という点は、誰がどの発言で触れていないかを示す証拠を集めていません(「ない」ことの証明は難しいためです)。「主張のかたち」の欄は、型の整理であり、実際の発言の収集は今後の作業です。</li>
+      <li>辞典の記述は学説の要約で、独立した確認としては弱く扱っています。項目の確度は、その点を考慮しています。</li>
+      <li>「地域でちがう」の項目は、出典の多くが一般向けの記事や企業の解説で、分かれた年代と理由は「諸説」の紹介にとどまるものが多いです。確度を低めに付け、わからないものは「年代不明」として残しています。</li>
+      <li>戦争の記録の項目は、政府答弁・裁判記録・公文書公開・論文要旨に基づく範囲です。犠牲者数の学説比較は含みません。</li>
+      <li>昭和初期が少ないのは、実際に少ないのではなく、検索の偏りの可能性が高いです。</li>
+      <li>一部の学術論文は、取得できず本文を読めていません(民藝運動、桂離宮とタウト、正座の論文、君が代・日の丸への政府答弁書など)。</li>
+      <li>書籍は、書誌と出版社の紹介文までを確認した範囲です。</li>
+      <li>神社や寺院の作法(手水・正中など)は、成立時期を示す資料が見つかっていません。</li>
+    </ul>
+  </div></details>
+  <details id="design"><summary>このサイトの作りかた(設計方針)</summary><div class="inner">
+    <p>画面は、ゲームのメニューの見た目をまねるのではなく、ゲーム開発者・桜井政博氏のUIの考え方を、サイトの作りに置きかえて設計しています。参考にしたのは、動画を要約した個人サイト「センコの活動記録」の記事(2026-06-16 投稿)です。氏本人の発言そのものではなく、要約記事を経由した理解なので、元の動画で確認してください。</p>
+    <div class="scroll"><table>
+      <tr><th>考え方(要約記事の項目)</th><th>このサイトでの置きかえ</th></tr>
+      <tr><td>言語がなくてもわかる・押せば始まる(#14)</td><td>最初の画面は「ぜんぶ見る」が選ばれた状態。説明を読まなくても、押せば一覧が出ます。</td></tr>
+      <tr><td>大事なものをより大きく(#08)</td><td>よく使う2つ(ぜんぶ、古来の主張)だけを大きく。年代・分野は小さく同じ大きさ。</td></tr>
+      <tr><td>メニューにヘルプを、同じ言葉で説明しない(#13)</td><td>タイルにふれると説明が出ます。「確度」などの用語は、線の形つきの凡例で言いかえています。</td></tr>
+      <tr><td>色による区分、色を混ぜすぎない(#07)</td><td>色は年代だけに使い、状態は線の形と文字で表します。</td></tr>
+      <tr><td>HUDは必要なものを追従させる(#15)</td><td>いまの条件と件数は、スクロールしても上に残ります。</td></tr>
+      <tr><td>必ず飛ばせる・止められる(#10)</td><td>はじまりの演出はなく、「メニューをとばして一覧へ」も用意。動きをへらす設定もあります。</td></tr>
+      <tr><td>いまどきの親切設計、文字の大きさ(#03, #02)</td><td>文字サイズ、くっきり表示、動きの設定。日本語の長い文を前提に、余白と行の長さを調整。</td></tr>
+      <tr><td>高速に選びたい(#09)</td><td>矢印キーとEnterで移動と決定。「/」でことば検索。</td></tr>
+      <tr><td>テキストの読み進め(#12)</td><td>各項目は「一言説明→くわしく」の2段。「ぜんぶひらく」で読む速さを選べます。</td></tr>
+      <tr><td>わかりやすさと様式性は両立しにくい(#01)</td><td>傾いたタイルは雰囲気のためのもの。文字は傾けず、読みやすさを優先しました。</td></tr>
+    </table></div>
+    <p>出典:<a href="https://senkohome.com/sakurai-game-dev-ui/" target="_blank" rel="noopener noreferrer">センコの活動記録「【要約】桜井政博のゲーム作るには『UI』」</a>(個人サイト。記事に筆者名の記載なし)。</p>
+  </div></details>
+</div>
+
+<footer>
+  <p>本サイトは一般的な情報提供であり、専門的助言の代替ではありません。</p>
+</footer>
+</div>
+
+<script type="application/json" id="gl-json">%%GLJSON%%</script>
+<div id="glTip" hidden></div>
+<div id="glPop" hidden role="dialog" aria-label="用語の説明"><div class="box"><div class="rd" id="glRd"></div><p class="tm" id="glTm"></p><p id="glMn"></p><button type="button" id="glClose">とじる</button><a href="#glossary" id="glMore">用語集を見る</a></div></div>
+<script type="application/json" id="db-json">%%JSON%%</script>
+<script>
+(function(){
+  var R=document.documentElement;
+  function store(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+  function load(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+  /* せってい */
+  var fsBtns=[].slice.call(document.querySelectorAll('[data-fs]'));
+  function setFs(v){R.setAttribute('data-fs',v);fsBtns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.fs===v?'true':'false');});store('fs',v);}
+  fsBtns.forEach(function(b){b.addEventListener('click',function(){setFs(b.dataset.fs);});});
+  function flag(id,attr,key){var b=document.getElementById(id);
+    function set(on){if(on)R.setAttribute(attr,'1');else R.removeAttribute(attr);b.setAttribute('aria-pressed',on?'true':'false');store(key,on?'1':'0');}
+    b.addEventListener('click',function(){set(b.getAttribute('aria-pressed')!=='true');});
+    if(load(key)==='1')set(true);}
+  flag('hc','data-hc','hc');flag('rm','data-rm','rm');
+  var sv=load('fs');if(sv==='s'||sv==='l')setFs(sv);
+
+  var cards=[].slice.call(document.querySelectorAll('.card'));
+  var tiles=[].slice.call(document.querySelectorAll('.tile'));
+  var st={set:'all',val:'',q:''};
+  var label=document.getElementById('curLabel'),cnt=document.getElementById('curCount'),empty=document.getElementById('empty'),
+      q=document.getElementById('q'),helpText=document.getElementById('helpText'),toggleAll=document.getElementById('toggleAll');
+  var TIPS={ok:'確認済:複数の独立した出典で一致',warn:'要確認:出典が1系統、本文未読、または見解が分かれる',ng:'確認不可:検索では裏付けが得られなかった'};
+  cards.forEach(function(c){
+    var cf=c.querySelector('.b.conf');if(cf){var k=cf.classList.contains('ok')?'ok':cf.classList.contains('warn')?'warn':'ng';cf.title=TIPS[k];}
+  });
+  function match(c){
+    var ok=true;
+    if(st.set==='era') ok=c.dataset.era===st.val;
+    else if(st.set==='type') ok=c.dataset.type===st.val;
+    else if(st.set==='field') ok=(' '+c.dataset.fields+' ').indexOf(' '+st.val+' ')>-1;
+    else if(st.set==='claim') ok=c.dataset.claim==='C'&&c.dataset.conf!=='確認不可';
+    if(ok&&st.q){ok=c.textContent.replace(/\s+/g,' ').toLowerCase().indexOf(st.q)>-1;}
+    return ok;
+  }
+  function apply(scroll){
+    var n=0;
+    cards.forEach(function(c){var m=match(c);c.hidden=!m;if(m)n++;});
+    tiles.forEach(function(t){
+      var on=t.dataset.set===st.set&&(st.set==='all'||st.set==='claim'||t.dataset.val===st.val);
+      t.classList.toggle('sel',on);t.setAttribute('aria-pressed',on?'true':'false');
+    });
+    var name=st.set==='all'?'ぜんぶ':st.set==='claim'?'「古来」と言っているもの':st.val;
+    label.textContent=name+(st.q?' + 「'+q.value+'」':'');
+    cnt.textContent=n;empty.hidden=n>0;
+    if(scroll)document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  function help(t){helpText.textContent=t.dataset.help||'';}
+  tiles.forEach(function(t){
+    t.addEventListener('click',function(){st.set=t.dataset.set;st.val=t.dataset.val||'';help(t);apply(true);});
+    t.addEventListener('pointerenter',function(){help(t);});
+    t.addEventListener('focus',function(){help(t);});
+  });
+  q.addEventListener('input',function(){st.q=q.value.trim().toLowerCase();apply(false);});
+  function resetAll(){st={set:'all',val:'',q:''};q.value='';apply(false);}
+  document.getElementById('reset').addEventListener('click',resetAll);
+  var allOpen=false;
+  toggleAll.addEventListener('click',function(){
+    allOpen=!allOpen;cards.forEach(function(c){if(!c.hidden)c.open=allOpen;});
+    toggleAll.firstChild.textContent=allOpen?'ぜんぶとじる':'ぜんぶひらく';});
+  document.addEventListener('keydown',function(e){
+    var el=document.activeElement;
+    if(e.key==='/'&&el!==q){e.preventDefault();q.focus();return;}
+    if(e.key==='Escape'){if(el===q){q.blur();}else{resetAll();window.scrollTo({top:0});}return;}
+    var i=tiles.indexOf(el);if(i<0)return;
+    var d={ArrowRight:1,ArrowDown:1,ArrowLeft:-1,ArrowUp:-1}[e.key];
+    if(d){e.preventDefault();tiles[(i+d+tiles.length)%tiles.length].focus();}
+  });
+  function openHash(){
+    var id=(location.hash||'').slice(1);if(!id)return;
+    var t=document.getElementById(id);if(!t)return;
+    if(t.classList.contains('card')){resetAll();t.open=true;t.scrollIntoView({block:'start'});}
+    else if(t.tagName==='DETAILS'){t.open=true;}
+  }
+  window.addEventListener('hashchange',openHash);
+  apply(false);openHash();
+})();
+(function(){
+  var G;try{G=JSON.parse(document.getElementById('gl-json').textContent);}catch(e){return;}
+  var keys=Object.keys(G).sort(function(a,b){return b.length-a.length;});
+  var re=new RegExp(keys.map(function(k){return k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}).join('|'),'g');
+  function wrap(root){
+    var seen={},w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
+      var p=n.parentNode;if(p.closest&&p.closest('.gl,a,button,script,rt,input,.cid,.cname,.cbadges'))return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;}}),nodes=[];
+    while(w.nextNode())nodes.push(w.currentNode);
+    nodes.forEach(function(n){
+      var t=n.nodeValue;re.lastIndex=0;var m,last=0,frag=null;
+      while((m=re.exec(t))){
+        var k=m[0];if(seen[k])continue;seen[k]=1;
+        if(!frag)frag=document.createDocumentFragment();
+        frag.appendChild(document.createTextNode(t.slice(last,m.index)));
+        var sp=document.createElement('span');sp.className='gl';sp.tabIndex=0;sp.setAttribute('role','button');sp.dataset.t=k;sp.setAttribute('aria-expanded','false');
+        var ru=document.createElement('ruby');ru.appendChild(document.createTextNode(k));
+        var rt=document.createElement('rt');rt.textContent=G[k][0];ru.appendChild(rt);sp.appendChild(ru);
+        frag.appendChild(sp);last=m.index+k.length;
+      }
+      if(frag){frag.appendChild(document.createTextNode(t.slice(last)));n.parentNode.replaceChild(frag,n);}
+    });
+  }
+  document.querySelectorAll('.card').forEach(function(c){
+    var a=c.querySelector('.cplain'),b=c.querySelector('.cbody');if(a)wrap(a);if(b)wrap(b);});
+  document.querySelectorAll('.info .inner').forEach(function(x){if(!x.closest('#glossary'))wrap(x);});
+  var tip=document.getElementById('glTip'),pop=document.getElementById('glPop'),cur=null;
+  function place(el){var r=el.getBoundingClientRect();tip.hidden=false;
+    var x=Math.min(Math.max(8,r.left),window.innerWidth-tip.offsetWidth-8),y=r.top-tip.offsetHeight-6;if(y<4)y=r.bottom+6;
+    tip.style.left=x+'px';tip.style.top=y+'px';}
+  function showTip(el){var g=G[el.dataset.t];tip.textContent=g[0];place(el);}
+  document.addEventListener('pointerover',function(e){if(e.pointerType!=='mouse')return;var el=e.target.closest&&e.target.closest('.gl');if(el)showTip(el);});
+  document.addEventListener('pointerout',function(e){if(e.target.closest&&e.target.closest('.gl'))tip.hidden=true;});
+  document.addEventListener('focusin',function(e){var el=e.target.closest&&e.target.closest('.gl');if(el)showTip(el);});
+  document.addEventListener('focusout',function(e){if(e.target.closest&&e.target.closest('.gl'))tip.hidden=true;});
+  function open(el){
+    var k=el.dataset.t,g=G[k];if(cur)cur.setAttribute('aria-expanded','false');cur=el;el.setAttribute('aria-expanded','true');
+    document.getElementById('glRd').textContent='読み方';document.getElementById('glTm').textContent=k+'(' + g[0] + ')';
+    document.getElementById('glMn').textContent=g[1];document.getElementById('glMore').dataset.t=k;pop.hidden=false;tip.hidden=true;}
+  function close(){pop.hidden=true;if(cur){cur.setAttribute('aria-expanded','false');cur.focus&&cur.focus({preventScroll:true});cur=null;}}
+  document.addEventListener('click',function(e){
+    var el=e.target.closest&&e.target.closest('.gl');
+    if(el){e.preventDefault();e.stopPropagation();open(el);return;}
+    if(!pop.hidden&&!e.target.closest('#glPop'))close();
+  },true);
+  document.addEventListener('keydown',function(e){
+    var el=document.activeElement;
+    if(el&&el.classList&&el.classList.contains('gl')&&(e.key==='Enter'||e.key===' ')){e.preventDefault();e.stopPropagation();open(el);}
+    else if(e.key==='Escape'&&!pop.hidden){e.stopPropagation();close();}
+  },true);
+  document.getElementById('glClose').addEventListener('click',close);
+  document.getElementById('glMore').addEventListener('click',function(e){
+    e.preventDefault();var k=this.dataset.t,d=document.getElementById('glossary');d.open=true;pop.hidden=true;
+    var t=document.getElementById('g-'+k);if(t)t.scrollIntoView({block:'center'});});
+  window.addEventListener('scroll',function(){tip.hidden=true;},{passive:true});
+  var ry=document.getElementById('ry');
+  function setRy(on){if(on)document.documentElement.setAttribute('data-ruby','1');else document.documentElement.removeAttribute('data-ruby');ry.setAttribute('aria-pressed',on?'true':'false');try{localStorage.setItem('ry',on?'1':'0');}catch(e){}}
+  ry.addEventListener('click',function(){setRy(ry.getAttribute('aria-pressed')!=='true');});
+  try{if(localStorage.getItem('ry')==='1')setRy(true);}catch(e){}
+})();
+</script>

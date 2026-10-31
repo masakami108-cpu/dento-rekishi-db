@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: __BASE_URL__/sitemap.xml
+Sitemap: https://masakami108-cpu.github.io/dento-rekishi-db/sitemap.xml

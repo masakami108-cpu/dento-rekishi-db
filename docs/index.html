@@ -1,3 +1,8 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>おとなでも間違う日本の伝統・歴史</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="日本の「伝統」をめぐる思い込みを、系統・年代・分野から調べられるデータベース。出典・確度・別の見方つき。">
@@ -24,7 +29,7 @@ html[data-fs="s"]{font-size:15px}html[data-fs="l"]{font-size:19px}
 html[data-hc="1"]{--line:var(--ink);--ink2:var(--ink)}
 html[data-rm="1"] *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1rem;line-height:1.75;
   padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px));padding-block:0 48px;
   background-image:repeating-conic-gradient(from 0deg at 50% -10%,rgba(255,255,255,.03) 0 6deg,transparent 6deg 12deg);background-attachment:fixed}
@@ -39,7 +44,7 @@ h1{font-family:var(--disp);font-weight:400;font-size:clamp(1.8rem,6vw,3rem);line
 h1 em{font-style:normal;color:var(--hot);display:inline-block;transform:skewX(-8deg)}
 .lead{margin:6px 0 0;max-width:44em}
 .lead b{background:linear-gradient(transparent 62%,var(--glow) 62%)}
-.set{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.82rem}
+.set{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.92rem}
 .set button{font:inherit;cursor:pointer;background:var(--panel);color:var(--ink);border:2px solid var(--line);padding:2px 10px;min-height:32px}
 .set button[aria-pressed="true"]{border-color:var(--hot);background:var(--hot);color:var(--hot-ink);font-weight:900}
 .set .lab{color:var(--ink2)}
@@ -57,11 +62,11 @@ h1 em{font-style:normal;color:var(--hot);display:inline-block;transform:skewX(-8
 .tile:hover,.tile:focus-visible{transform:skewX(-7deg) translateY(-3px) scale(1.03);border-color:var(--hot);box-shadow:0 8px 0 rgba(0,0,0,.35),0 0 24px var(--glow);z-index:2}
 .tile:active{transform:skewX(-7deg) translateY(1px)}
 .tile.sel{border-color:var(--hot);box-shadow:0 0 0 4px var(--hot),0 0 26px var(--glow)}
-.tile.sel::after{content:"えらんでいる";position:absolute;right:8px;top:-12px;background:var(--hot);color:var(--hot-ink);font-size:.7rem;font-weight:900;padding:0 8px;transform:skewX(7deg)}
-.tt{font-family:var(--disp);font-size:clamp(1rem,2.4vw,1.35rem);line-height:1.25}
-.ts{font-size:.75rem;opacity:.95}
+.tile.sel::after{content:"えらんでいる";position:absolute;right:8px;top:-12px;background:var(--hot);color:var(--hot-ink);font-size:.85rem;font-weight:900;padding:0 8px;transform:skewX(7deg)}
+.tt{text-wrap:balance;font-family:var(--disp);font-size:clamp(1rem,2.4vw,1.35rem);line-height:1.25}
+.ts{font-size:.88rem;opacity:.95}
 .tn{font-family:var(--disp);font-size:1.6rem;line-height:1;align-self:flex-end}
-.tn small{font-family:var(--body);font-size:.75rem;margin-left:2px}
+.tn small{font-family:var(--body);font-size:.88rem;margin-left:2px}
 /* 大事なものをより大きく: 「ぜんぶ」と「古来の主張」だけを大きくする */
 .tile.all{background:linear-gradient(135deg,#1c3fd8,#0a84d6);min-height:124px}
 .tile.claim{background:linear-gradient(135deg,#b3001f,#e4002b);min-height:124px}
@@ -77,8 +82,8 @@ h1 em{font-style:normal;color:var(--hot);display:inline-block;transform:skewX(-8
 .tile.f .tt{font-size:1rem}.tile.f .tn{font-size:1.2rem}
 .helpbar{margin:12px 0 0;min-height:3.6em;padding:8px 14px;background:var(--panel);border:2px solid var(--line);border-left:8px solid var(--hot)}
 .helpbar b{font-family:var(--disp);font-weight:400;margin-right:.6em}
-.hint{color:var(--ink2);font-size:.82rem;margin:8px 0 0}
-kbd{font-family:inherit;border:1px solid var(--ink2);border-bottom-width:3px;border-radius:4px;padding:0 6px;font-size:.78rem}
+.hint{color:var(--ink2);font-size:.92rem;margin:8px 0 0}
+kbd{font-family:inherit;border:1px solid var(--ink2);border-bottom-width:3px;border-radius:4px;padding:0 6px;font-size:.88rem}
 #results{scroll-margin-top:60px;margin-top:22px}
 /* HUD: いまの条件と件数は、スクロールしても追いかけてくる */
 .bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin:0 0 10px;padding:8px 12px;background:var(--panel);border:2px solid var(--line)}
@@ -88,7 +93,7 @@ kbd{font-family:inherit;border:1px solid var(--ink2);border-bottom-width:3px;bor
 .btn{font:inherit;font-weight:900;cursor:pointer;background:var(--hot);color:var(--hot-ink);border:0;padding:5px 14px;transform:skewX(-8deg)}
 .btn.sub{background:var(--panel);color:var(--ink);border:2px solid var(--line)}
 .btn>span{display:inline-block;transform:skewX(8deg)}
-.legend{font-size:.82rem;color:var(--ink2);margin:0 0 10px}
+.legend{font-size:.92rem;color:var(--ink2);margin:0 0 10px}
 .card{background:var(--panel);border:2px solid var(--line);border-left-width:10px;margin:0 0 8px;scroll-margin-top:70px}
 .card.e1{border-left-color:var(--e1)}.card.e2{border-left-color:var(--e2)}.card.e3{border-left-color:var(--e3)}
 .card.e4{border-left-color:var(--e4)}.card.e5{border-left-color:var(--e5)}.card.e6{border-left-color:var(--e6)}
@@ -97,32 +102,32 @@ kbd{font-family:inherit;border:1px solid var(--ink2);border-bottom-width:3px;bor
 summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding:10px 14px;align-items:start}
 summary::-webkit-details-marker{display:none}
 summary:hover{background:rgba(127,140,200,.14)}
-.cid{font-family:var(--disp);font-size:.9rem;color:var(--ink2);padding-top:2px}
+.cid{font-family:var(--disp);font-size:.95rem;color:var(--ink2);padding-top:2px}
 .cmain{display:flex;flex-direction:column;min-width:0}
 .cname{font-family:var(--disp);font-size:1.1rem;line-height:1.4;text-wrap:balance}
 .cplain{opacity:.95}
 .cbadges{grid-column:2;display:flex;flex-wrap:wrap;gap:6px}
 /* 色は年代だけ。状態は線の形と文字で示し、色に頼らない */
-.b{font-size:.76rem;font-weight:700;padding:0 9px;border:2px solid var(--ink2);color:var(--ink);white-space:nowrap}
+.b{font-size:.88rem;font-weight:700;padding:0 9px;border:2px solid var(--ink2);color:var(--ink);white-space:nowrap}
 .b.era,.b.typ{border-color:var(--line);color:var(--ink2)}
 .b.ok{border-style:solid}.b.warn{border-style:dashed}.b.ng{border-style:dotted}
 .b.cC{background:var(--hot);color:var(--hot-ink);border-color:var(--hot)}
 .cbody{padding:4px 16px 14px;border-top:2px dashed var(--line)}
 dl{margin:8px 0 0;display:grid;grid-template-columns:minmax(7em,11em) 1fr;gap:6px 16px}
-dt{font-weight:900;color:var(--ink2);font-size:.86rem}
+dt{font-weight:900;color:var(--ink2);font-size:.95rem}
 dd{margin:0;min-width:0;overflow-wrap:anywhere}
-h4{margin:12px 0 4px;font-size:.88rem;color:var(--ink2)}
-.srcs{margin:0;padding-left:1.2em;font-size:.86rem}
+h4{margin:12px 0 4px;font-size:.95rem;color:var(--ink2)}
+.srcs{margin:0;padding-left:1.2em;font-size:.95rem}
 .srcs li{margin:3px 0;overflow-wrap:anywhere}
-.sid{font-family:var(--disp);font-size:.72rem;color:var(--ink2)}
-.stype{font-size:.7rem;border:1px solid var(--line);padding:0 6px;margin-right:2px}
-.perma{margin:8px 0 0;font-size:.82rem}
+.sid{font-family:var(--disp);font-size:.85rem;color:var(--ink2)}
+.stype{font-size:.85rem;border:1px solid var(--line);padding:0 6px;margin-right:2px}
+.perma{margin:8px 0 0;font-size:.92rem}
 .empty{padding:24px;text-align:center;color:var(--ink2);border:2px dashed var(--line)}
 .info{margin:30px 0 0;display:grid;gap:10px}
 .info details{background:var(--panel);border:2px solid var(--line)}
 .info summary{display:block;font-family:var(--disp);font-size:1rem;padding:10px 14px}
 .info .inner{padding:0 16px 14px}
-.info table{border-collapse:collapse;width:100%;font-size:.88rem}
+.info table{border-collapse:collapse;width:100%;font-size:.95rem}
 .info th,.info td{border:1px solid var(--line);padding:5px 10px;text-align:left;vertical-align:top}
 .scroll{overflow-x:auto}
 .info code{background:var(--bg);padding:1px 6px;overflow-wrap:anywhere}
@@ -134,18 +139,21 @@ h4{margin:12px 0 4px;font-size:.88rem;color:var(--ink2)}
 .gl rt{display:none;font-size:.55em;line-height:1;color:var(--ink2);font-weight:400;letter-spacing:0}
 html[data-ruby="1"] .gl rt{display:ruby-text}
 html[data-ruby="1"] .cplain,html[data-ruby="1"] .cbody,html[data-ruby="1"] .inner{line-height:2.05}
-#glTip{position:fixed;z-index:30;pointer-events:none;background:var(--ink);color:var(--bg);padding:2px 10px;font-size:.9rem;font-weight:700;border-radius:4px;max-width:20em}
+#glTip{position:fixed;z-index:30;pointer-events:none;background:var(--ink);color:var(--bg);padding:2px 10px;font-size:.95rem;font-weight:700;border-radius:4px;max-width:20em}
 #glPop{position:fixed;z-index:31;left:0;right:0;bottom:0;display:flex;justify-content:center;padding:0 max(16px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));pointer-events:none}
 #glPop[hidden]{display:none}
 #glPop .box{pointer-events:auto;width:min(40em,100%);background:var(--panel);color:var(--ink);border:2px solid var(--hot);border-left-width:10px;padding:10px 14px;box-shadow:0 6px 24px rgba(0,0,0,.45)}
-#glPop .rd{font-size:.85rem;color:var(--ink2)}
+#glPop .rd{font-size:.92rem;color:var(--ink2)}
 #glPop .tm{font-family:var(--disp);font-size:1.25rem;line-height:1.3;margin:0}
 #glPop p{margin:4px 0 8px}
-#glPop button,#glPop a{font:inherit;font-size:.85rem;cursor:pointer;background:var(--panel);color:var(--ink);border:2px solid var(--line);padding:2px 10px;min-height:32px;margin-right:6px}
+#glPop button,#glPop a{font:inherit;font-size:.92rem;cursor:pointer;background:var(--panel);color:var(--ink);border:2px solid var(--line);padding:2px 10px;min-height:32px;margin-right:6px}
 .gdl dt{font-weight:900;color:var(--ink)}.gdl dt small{font-weight:400;color:var(--ink2);margin-left:6px}
 .gdl dd{margin:0 0 8px 0}
-footer{margin-top:28px;color:var(--ink2);font-size:.82rem}
+footer{margin-top:28px;color:var(--ink2);font-size:.92rem}
 @media (max-width:760px){
+  html{font-size:17.5px}html[data-fs="s"]{font-size:16px}html[data-fs="l"]{font-size:20.5px}
+  body{line-height:1.85}
+  .bar{position:static}.bar input{flex:1 1 100%;order:3;padding:9px 12px}.btn{padding:8px 16px}#results,.card{scroll-margin-top:12px}
   .g-main{grid-template-columns:1fr}.g-era{grid-template-columns:repeat(2,1fr)}.g-field{grid-template-columns:repeat(2,1fr)}
   .tile{transform:skewX(-4deg)}.tile>*{transform:skewX(4deg)}
   .tile:hover,.tile:focus-visible{transform:skewX(-4deg) translateY(-2px)}.tile:active{transform:skewX(-4deg)}
@@ -156,6 +164,8 @@ footer{margin-top:28px;color:var(--ink2);font-size:.82rem}
 @media (min-width:761px) and (max-width:900px){.g-era{grid-template-columns:repeat(3,1fr)}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.tile:hover,.tile:focus-visible{transform:skewX(-7deg)}}
 </style>
+</head>
+<body>
 
 <div class="wrap">
 <a class="skip" href="#results">メニューをとばして一覧へ</a>
@@ -1231,3 +1241,6 @@ footer{margin-top:28px;color:var(--ink2);font-size:.82rem}
   try{if(localStorage.getItem('ry')==='1')setRy(true);}catch(e){}
 })();
 </script>
+
+</body>
+</html>

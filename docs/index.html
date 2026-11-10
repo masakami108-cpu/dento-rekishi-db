@@ -109,21 +109,21 @@ kbd{font-family:inherit;border:1px solid var(--ink2);border-bottom-width:3px;bor
 .card.e4{border-left-color:var(--e4)}.card.e5{border-left-color:var(--e5)}.card.e6{border-left-color:var(--e6)}
 .card[open]{border-top-color:var(--hot);border-right-color:var(--hot);border-bottom-color:var(--hot)}
 .card[hidden]{display:none}
-summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding:10px 14px;align-items:start}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;padding:10px 14px;align-items:start}
 summary::-webkit-details-marker{display:none}
 summary:hover{background:rgba(127,140,200,.14)}
 .cid{font-family:var(--disp);font-size:.95rem;color:var(--ink2);padding-top:2px}
 .cmain{display:flex;flex-direction:column;min-width:0}
 .cname{font-family:var(--disp);font-size:1.1rem;line-height:1.4;text-wrap:balance}
-.cplain{opacity:.95}
+.cplain{opacity:.95;overflow-wrap:anywhere}
 .cbadges{grid-column:2;display:flex;flex-wrap:wrap;gap:6px}
 /* 色は年代だけ。状態は線の形と文字で示し、色に頼らない */
-.b{font-size:.88rem;font-weight:700;padding:0 9px;border:2px solid var(--ink2);color:var(--ink);white-space:nowrap}
+.b{font-size:.88rem;font-weight:700;padding:0 9px;border:2px solid var(--ink2);color:var(--ink);overflow-wrap:anywhere}
 .b.era,.b.typ{border-color:var(--line);color:var(--ink2)}
 .b.ok{border-style:solid}.b.warn{border-style:dashed}.b.ng{border-style:dotted}
 .b.cC{background:var(--hot);color:var(--hot-ink);border-color:var(--hot)}
-.cbody{padding:4px 16px 14px;border-top:2px dashed var(--line)}
-dl{margin:8px 0 0;display:grid;grid-template-columns:minmax(7em,11em) 1fr;gap:6px 16px}
+.cbody{overflow-wrap:anywhere;padding:4px 16px 14px;border-top:2px dashed var(--line)}
+dl{margin:8px 0 0;display:grid;grid-template-columns:minmax(7em,11em) minmax(0,1fr);gap:6px 16px}
 dt{font-weight:900;color:var(--ink2);font-size:.95rem}
 dd{margin:0;min-width:0;overflow-wrap:anywhere}
 h4{margin:12px 0 4px;font-size:.95rem;color:var(--ink2)}
@@ -168,7 +168,7 @@ footer{margin-top:28px;color:var(--ink2);font-size:.92rem}
   .tile{transform:skewX(-4deg)}.tile>*{transform:skewX(4deg)}
   .tile:hover,.tile:focus-visible{transform:skewX(-4deg) translateY(-2px)}.tile:active{transform:skewX(-4deg)}
   .tile.sel::after{transform:skewX(4deg)}
-  dl{grid-template-columns:1fr;gap:2px}dt{margin-top:8px}
+  dl{grid-template-columns:minmax(0,1fr);gap:2px}dt{margin-top:8px}
   .hint.kb{display:none}
 }
 @media (min-width:761px) and (max-width:900px){.g-era{grid-template-columns:repeat(3,1fr)}}
